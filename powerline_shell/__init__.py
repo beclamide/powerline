@@ -122,7 +122,7 @@ class Powerline(object):
             separator_fg if separator_fg is not None else bg))
 
     def draw(self):
-        text = (''.join(self.draw_segment(i) for i in range(len(self.segments)))
+        text = "\n" + (''.join(self.draw_segment(i) for i in range(len(self.segments)))
                 + self.reset) + ' '
         if py3:
             return text
@@ -154,15 +154,10 @@ def find_config():
 
 DEFAULT_CONFIG = {
     "segments": [
-        'virtual_env',
         'username',
-        'hostname',
-        'ssh',
-        'cwd',
         'git',
-        'hg',
-        'jobs',
-        'root',
+        'node_version',
+        'cwd'
     ]
 }
 
